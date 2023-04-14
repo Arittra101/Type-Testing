@@ -11,9 +11,10 @@
 </head>
 
 <body>
+    
     <div class="container">
-        <div class="name">Hello! Complete the challange of 4 levels
-        make yourself a typermaster!
+        <div class="name">Hello! Complete the  4 levels challange and
+        make yourself a typermaster! <span style="color: green; font-weight: bold;">Comming Soon</span>
         </div>
         <div class="stats">
             <p>Time: <span id="timer">40 s</span></p>
@@ -25,10 +26,11 @@
         <button id="start-test" onclick="startTest()">Start Test</button>
         <button id="stop-test" onclick="displayResult()">Stop Test</button>
         <div class="result">
-            <h3>Result</h3>
+            <h3 id = "re">Result</h3>
             <div class="wrapper">
                 <p>Accuracy: <span id="accuracy"></span></p>
                 <p>Speed: <span id="wpm"></span></p>
+                <p>Mistakes: <span id="mis"></span></p>
             </div>
         </div>
     </div>
