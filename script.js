@@ -1,5 +1,7 @@
 let random_query = document.querySelector('#quote');
 let user_input = document.querySelector('#quote-input');
+let des_name = document.querySelector('.name');
+let level_html = document.querySelector('#level');
 let level = 1;
 let time = 0;
 let mistake = 0;
@@ -19,10 +21,10 @@ function initial_quotes() {
 // random_query.innerHTML = `;
 const level_one = () => {
 
-    // quotes = 'cout<<"Hello I can do anything";';
+    quotes = 'cout<<"Hello I can do anything";';
     initial_quotes();
-    quotes = "Hello";
-    // quotes = 'cout<<"The quick brown fox jumps over the lazy dog."';
+   // quotes = "Hello";
+   // quotes = 'cout<<"The quick brown fox jumps over the lazy dog."';
     numberofchar = quotes.length;
     convertQuotes_To_array(quotes)
 };
@@ -30,18 +32,25 @@ const level_two = () => {
     initial_quotes();
     console.log("level two");
     // random_query.innerHTML="";
-    quotes = 'cout<<"The quick brown fox jumps over the lazy dog"';
+     quotes = 'cout<<"The quick brown fox jumps over the lazy dog"';
+    //quotes = 'Hello2"';
     convertQuotes_To_array(quotes);
 
 };
 const level_three = () => {
     initial_quotes();
-    random_query.innerHTML = 'cout<<"The shortest war in history was between Britain and Zanzibar in 1896, lasting only 38 minutes.";';
+    console.log("Hello Level 3");
+     quotes ='cout<<"The shortest war in history was between Britain and Zanzibar in 1896";';
+   // quotes = 'Hello3';
     convertQuotes_To_array(quotes);
 };
 const level_four = () => {
+    initial_quotes();
+    console.log("Hello Level 4");
+    quotes ='cout<<"The shortest war in history was between Britain and Zanzibar in 1896, lasting only 38 minutes.";';
+  //  quotes = 'Hello4';
+    convertQuotes_To_array(quotes);
 
-    random_query.innerHTML = 'cout<<"The average person spends six months of their life waiting for red lights to turn green.";';
 };
 
 
@@ -147,17 +156,11 @@ function startTest() {
     user_input.disabled = false;
     start = 1;
 
-
-
-
-
 }
 
 
 function displayResult() {
     calculation();
-
-
 }
 
 function calculation() {
@@ -189,21 +192,41 @@ function calculation() {
     }
 
     if (cal > 80 && level == 1) {
+        des_name.innerHTML = `Hello! Now  To pass the level Two <span
+        style="color: green; font-weight: bold;">Now Accuracy must be greater than 90%</span>`
         level++;
         console.log("Going to level 2");
     }
     else if (cal < 80 && level == 1) {
+        des_name.innerHTML = `Hello! Sorry Back to level One
+        style="color: red; font-weight: bold;">Accuracy less then target</span>`
         level = 1;
     }
 
     else if (cal > 90 && level == 2) {
+        des_name.innerHTML = `Hello! Now  To pass the level Three <span
+        style="color: green; font-weight: bold;">Now Accuracy must be greater than 95%</span>`
         level++;
     }
     else if (cal < 90 && level == 2) {
+        des_name.innerHTML = `Hello! Sorry Back to level One
+        style="color: red; font-weight: bold;">Accuracy less then target</span>`
         level = 1;
     }
     else if (cal > 95 && level == 3) {
-        level++; // level 4
+        des_name.innerHTML = `Hello! Now  To pass the level Two <span
+        style="color: green; font-weight: bold;">Now Accuracy must be 100%</span>`
+        level++;
+    }
+    else if (cal < 95 && level == 3) {
+        des_name.innerHTML = `Hello! Sorry Back to level One
+        <span style="color: red; font-weight: bold;">Accuracy Less then target</span>`
+        level = 1;
+    }
+    else if (cal == 100 && level == 4) {
+        des_name.innerHTML = ` <span style="color: Green; font-weight: bold;">You complete all the levels. You can Start from level one again!</span>`
+        level = 1;
+
     }
     console.log(char_type);
     window_load();
@@ -228,6 +251,10 @@ function window_load() {
     else if (level == 3) {
         console.log("Coming to level three");
         level_three();
+    }
+    else if (level == 4) {
+        console.log("Coming to level four");
+        level_four();
     }
 
     let start_btn = document.querySelector('#stop-test').style.display = "none";
@@ -258,6 +285,10 @@ function iniital() {
 
     user_input.value = "";
 
+}
+function reset() {
+
+    level = 1;
 }
 function back_to_level_one() {
     level = 1;

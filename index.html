@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    
+
     <div class="container">
-        <div class="name">Hello! Complete the  4 levels challange and
-        make yourself a typermaster! <span style="color: green; font-weight: bold;">Comming Soon</span>
+        <div class="name">Hello! There are 4 levels. To pass the level one <span
+                style="color: green; font-weight: bold;">Accuracy must be greater than 80 %</span>
         </div>
         <div class="stats">
             <p>Time: <span id="timer">40 s</span></p>
@@ -24,9 +24,9 @@
         <div id="quote" onmousedown="return" onselectstart="return false"></div>
         <textarea rows="4" id="quote-input" placeholder="Type here when the test starts.."></textarea>
         <button id="start-test" onclick="startTest()">Start Test</button>
-        <button id="stop-test" onclick="displayResult()">Stop Test</button>
+        <button id="stop-test" onclick="displayResult(),reset()">Stop Test</button>
         <div class="result">
-            <h3 id = "re">Result</h3>
+            <h3 id="re">Result</h3>
             <div class="wrapper">
                 <p>Accuracy: <span id="accuracy"></span></p>
                 <p>Speed: <span id="wpm"></span></p>
