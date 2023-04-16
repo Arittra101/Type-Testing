@@ -15,6 +15,7 @@ let char_type = 1;
 let alpha = 0;
 let game_lost = 0;
 
+
 function initial_quotes() {
     random_query.innerHTML = "";
 }
@@ -33,7 +34,7 @@ const level_two = () => {
     console.log("level two");
     // random_query.innerHTML="";
      quotes = 'cout<<"The quick brown fox jumps over the lazy dog"';
-    //quotes = 'Hello2"';
+   // quotes = 'Hello2"';
     convertQuotes_To_array(quotes);
 
 };
@@ -41,14 +42,14 @@ const level_three = () => {
     initial_quotes();
     console.log("Hello Level 3");
      quotes ='cout<<"The shortest war in history was between Britain and Zanzibar in 1896";';
-   // quotes = 'Hello3';
+  //  quotes = 'Hello3';
     convertQuotes_To_array(quotes);
 };
 const level_four = () => {
     initial_quotes();
     console.log("Hello Level 4");
-    quotes ='cout<<"The shortest war in history was between Britain and Zanzibar in 1896, lasting only 38 minutes.";';
-  //  quotes = 'Hello4';
+    quotes ='cout<<"Messaging allows real-time communi-cation by keyboard with up to five peoples";';
+    //quotes = 'Hello4';
     convertQuotes_To_array(quotes);
 
 };
@@ -196,36 +197,43 @@ function calculation() {
         style="color: green; font-weight: bold;">Now Accuracy must be greater than 90%</span>`
         level++;
         console.log("Going to level 2");
+       // level_method(level);
     }
     else if (cal < 80 && level == 1) {
         des_name.innerHTML = `Hello! Sorry Back to level One
-        style="color: red; font-weight: bold;">Accuracy less then target</span>`
+        <span style="color: red; font-weight: bold;">Accuracy less then target</span>`
         level = 1;
+       // level_method(level);
     }
 
     else if (cal > 90 && level == 2) {
         des_name.innerHTML = `Hello! Now  To pass the level Three <span
         style="color: green; font-weight: bold;">Now Accuracy must be greater than 95%</span>`
         level++;
+        //level_method(level);
     }
     else if (cal < 90 && level == 2) {
         des_name.innerHTML = `Hello! Sorry Back to level One
-        style="color: red; font-weight: bold;">Accuracy less then target</span>`
+        <span style="color: red; font-weight: bold;">Accuracy less then target</span>`
         level = 1;
+       // level_method(level);
     }
     else if (cal > 95 && level == 3) {
         des_name.innerHTML = `Hello! Now  To pass the level Two <span
         style="color: green; font-weight: bold;">Now Accuracy must be 100%</span>`
         level++;
+       // level_method(level);
     }
     else if (cal < 95 && level == 3) {
         des_name.innerHTML = `Hello! Sorry Back to level One
         <span style="color: red; font-weight: bold;">Accuracy Less then target</span>`
         level = 1;
+        //level_method(level);
     }
     else if (cal == 100 && level == 4) {
         des_name.innerHTML = ` <span style="color: Green; font-weight: bold;">You complete all the levels. You can Start from level one again!</span>`
         level = 1;
+       // level_method(level);
 
     }
     console.log(char_type);
@@ -241,19 +249,23 @@ function window_load() {
     //if(alpha==1) level_two();
     if (level == 1) {
         console.log("Coming to level one");
+        level_html.innerHTML = level;
         level_one();
     }
     //level_one();
     else if (level == 2) {
         console.log("Coming to level two");
+        level_html.innerHTML = level;
         level_two();
     }
     else if (level == 3) {
         console.log("Coming to level three");
+        level_html.innerHTML = level;
         level_three();
     }
     else if (level == 4) {
         console.log("Coming to level four");
+        level_html.innerHTML = level;
         level_four();
     }
 
@@ -276,14 +288,15 @@ function iniital() {
     let start_btn = document.querySelector('#start-test').style.display = "block";
     start_btn = document.querySelector('#stop-test').style.display = "none";
 
-    let level_inner = document.querySelector("#level");
-    level_inner.innerHTML = 1;
+    // let level_inner = document.querySelector("#level");
+    // level_inner.innerHTML = 1;
     user_input.disabled = true;
 
     document.querySelector("#mistakes").innerHTML = "0";
 
 
     user_input.value = "";
+    //level_method(1);
 
 }
 function reset() {
